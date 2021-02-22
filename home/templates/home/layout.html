@@ -1,0 +1,195 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="hamdi bouaskar portfolio">
+    <meta name="keywords" content="Hamdi Bouaskar, portfolio, cv, resume, it, support, specialist, technical">
+    <meta name="author" content="Hamdi Bouaskar">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Hamdi Bouaskar Portfolio</title>
+
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+  
+      .fa-github {
+        color:black;
+      }
+      #githubnav {
+        color: white;
+      }
+      .fa-linkedin {
+        color:#0099ff;
+      }
+      .fa-whatsapp {
+        color:#25D366;
+      }
+      .fa-skype {
+        color:#00aff0;
+      }
+      .fa-envelope {
+         color:#ffd11a;
+      }
+      #itech {
+        text-align: center;
+        font-weight: bold;
+      }
+      #check {
+        color: lightgreen;
+      }
+      #tabs li {
+    display: inline-block;
+    color: white;
+    }
+    #navlink {
+      color: white;
+    }
+    #navlink:hover {
+      color:#3399ff;
+    }
+    #socials > li {
+      display: inline-block;
+      margin-right:10px;
+    }
+    #socials > li > a {
+    padding: 10px;
+    }
+
+    .dropdown .dropbtn {
+
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.dropdown-content a:hover {
+  background-color: #cce6ff;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+    </style>
+  </head>
+  <body>
+<header>
+  <div class="collapse bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4 class="text-white">Follow me</h4>
+          <br>
+          <ul class="list-unstyled">
+            <li><a href="https://github.com" target="_blank"> <i class="fa fa-github fa-2x margin" id="githubnav"></i></a></li>
+            <br>
+            <li><a href="https://linkedin.com" target="_blank"> <i class="fa fa-linkedin fa-2x margin"></i></a></li>
+          </ul>
+          <br>
+          <h4 class="text-white">Let's chat</h4>
+          <br>
+          <ul class="list-unstyled">
+            <li><a href="skype:+1234567890?chat" target="_blank"> <i class="fa fa-skype fa-2x margin"></i></a></li>
+          </ul>
+          <br>         
+          <h4 class="text-white">Email me</h4>
+          <br>
+          <ul class="list-unstyled">
+          <li><a href="mailto:email@address.com" target="_blank"><i class="fa fa-envelope fa-2x margin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-dark shadow-sm" id="navtabs">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+      <div class="container" id="tabs_container">
+        <ul  id="tabs">
+        <li class="nav-item active">
+        <a id="navlink" class="nav-link" aria-current="page" href="{% url 'home:index' %}"><strong>Home</strong></a>
+      </li>
+        <li class="nav-item">
+          <div class="dropdown">
+            <button class="dropbtn" id="navlink"><strong>Certificates</strong>
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="{% url 'certificates:it_certif' %}"><strong>IT</strong></a>
+              <a href="{% url 'certificates:dmarketing_certif' %}"><strong>Digital Marketing</strong></a>
+              <a href="{% url 'certificates:webdev_certif' %}"><strong>Web Development</strong></a>
+            </div>
+           </div>
+      </li>
+      <li class="nav-item">
+        <a id="navlink" class="nav-link" href="{% url 'projects:index' %}"><strong>Projects</strong></a>
+      </li>
+       <li class="nav-item active">
+        <a id="navlink" class="nav-link" aria-current="page" href="/Resume.pdf"><strong>Resume Download</strong></a>
+        </ul>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
+<main>
+
+  {% block main %}
+  {% endblock %}
+
+</main>
+<hr/>
+<footer class="text-muted">
+  <div class="container">
+    <p id="itech">
+      <a href="#">Back to top</a>
+    </p>
+    <span><p id="itech">I-Tech®<script>document.write(new Date().getFullYear())</script></p></span> 
+  </div>
+</footer>
+  </body>
+
+  <script src="{% static 'jquery-3.5.1.min.js' %}"></script>
+  <script src="https://kit.fontawesome.com/3052a6a4eb.js"></script>
+  <script src="{% static '/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'popper.min.js' %}"></script>
+  </body>
+</html>
