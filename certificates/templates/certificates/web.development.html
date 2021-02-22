@@ -1,0 +1,25 @@
+{% extends "home/layout.html" %}
+{% load static %}
+{% block main %}
+
+<h1 id="certif" class="py-5 text-center">Web Development Certificates</h1>
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      {% for certif in webdev_certificates.all %}        
+      <div class="col">
+        <a target="_blank" href="{{ certif.link }}">
+        <div class="card shadow-sm">            
+          <img class="card-img-top" src="{{ certif.image.url }}">
+          <div class="card-body">
+            <p class="card-text">{{ certif.summary }}</p>
+            <div class="d-flex justify-content-between align-items-center">
+            </div>   
+            </a>          
+          </div>          
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  {% endblock %}
